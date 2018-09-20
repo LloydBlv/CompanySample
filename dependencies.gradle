@@ -13,6 +13,7 @@ ext {
     retrofit = "com.squareup.retrofit2:retrofit:2.3.0"
     retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:2.3.0"
     retrofitRxJava2Adapter = "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    httpLoggingInterceptor =  "com.squareup.okhttp3:logging-interceptor:3.11.0"
 
     // Testing
     junit = "junit:junit:4.12"
