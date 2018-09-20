@@ -1,8 +1,8 @@
-package ir.zinutech.android.data.entities
+package ir.zinutech.android.data.api
 
 import com.google.gson.annotations.SerializedName
 
-data class ManufacturerData(
+data class ManufacturersListResult(
     val page: Int,
     val totalPageCount: Int,
 

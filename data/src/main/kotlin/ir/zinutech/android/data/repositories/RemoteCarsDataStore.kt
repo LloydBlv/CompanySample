@@ -10,7 +10,7 @@ import ir.zinutech.android.domain.entities.BuildDateEntity
 import ir.zinutech.android.domain.entities.ManufacturerEntity
 import ir.zinutech.android.domain.entities.ModelEntity
 
-class RemoteCarsDataSource(private val api: Api): CarsDataStore {
+class RemoteCarsDataStore(private val api: Api): CarsDataStore {
 
   private val manufacturerDataEntityMapper = ManufacturerDataEntityMapper()
   private val modelDataEntityMapper = ModelDataEntityMapper()
