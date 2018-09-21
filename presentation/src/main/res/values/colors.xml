@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--<color name="colorPrimary">#3F51B5</color>-->
+  <!--<color name="colorPrimaryDark">#303F9F</color>-->
+  <!--<color name="colorAccent">#FF4081</color>-->
+
+  <color name="primary">#434343</color>
+  <color name="accent">#FF4081</color> <!-- mono-color -->
+  <color name="primary_dark">#3c3c3c</color>
+
+  <color name="mid_grey">#40808080</color>
+  <color name="manufacturer_even_bg">#03a9f4</color> <!--light blue 500 -->-->
+  <color name="manufacturer_odd_bg">#039BE5</color> <!--light blue 600 -->-->
+  <color name="ripple_light">#99ffffff</color>
+  <color name="divider">#1f000000</color> <!-- 12% black -->
+
+  <color name="background_light">#fafafa</color> <!-- grey 50 -->
+  <color name="background_lightish">#e0e0e0</color> <!-- grey 300 -->
+  <color name="hint_disabled_dark">#43000000</color> <!-- 26% black -->
+
+  <color name="background_super_dark">#ff292929</color>
+  <color name="text_primary_light">#ffffffff</color>
+
+</resources>

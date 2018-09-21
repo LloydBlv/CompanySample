@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">CompanySample</string>
+  <string name="manufacturers">Manufacturers</string>
+  <string name="double_press_to_exit">Press back again to exit</string>
+  <string name="exit">Exit</string>
+  <string name="car_manufacturer_model_token">%1$s - %2$s</string>
+</resources>
