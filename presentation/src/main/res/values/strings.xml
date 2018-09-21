@@ -4,4 +4,6 @@
   <string name="double_press_to_exit">Press back again to exit</string>
   <string name="exit">Exit</string>
   <string name="car_manufacturer_model_token">%1$s - %2$s</string>
+  <string name="models">Models</string>
+  <string name="build_dates">Build dates</string>
 </resources>

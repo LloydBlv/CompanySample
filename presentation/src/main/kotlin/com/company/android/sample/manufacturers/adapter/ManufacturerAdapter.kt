@@ -64,7 +64,8 @@ class ManufacturerAdapter(private val spanCount: Int,
 
     override fun bind(item: ManufacturerEntity) {
       itemView.manufacturer_item_name_tv.text = item.manufacturer
-      ViewCompat.setTransitionName(itemView.manufacturer_item_name_tv, item.id)
+      ViewCompat.setTransitionName(itemView, item.id)
+//      ViewCompat.setTransitionName(itemView.manufacturer_item_name_tv, item.id)
     }
   }
 }

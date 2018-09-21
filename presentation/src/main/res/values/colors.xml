@@ -21,4 +21,12 @@
   <color name="background_super_dark">#ff292929</color>
   <color name="text_primary_light">#ffffffff</color>
 
+
+  <color name="carmodels_even_bg">#ff191919</color> <!--light blue 500 -->-->
+  <color name="carmodels_odd_bg">#ff232323</color> <!--light blue 600 -->-->
+
+
+  <color name="builddates_even_bg">#ffff9800</color> <!--light blue 500 -->-->
+  <color name="builddates_odd_bg">#cc7a00</color> <!--light blue 600 -->-->
+
 </resources>

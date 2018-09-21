@@ -40,9 +40,9 @@ class CarModelsAdapter(private val spanCount: Int,
   override fun getViewHolder(parent: View,
       viewType: Int): BaseViewHolder<ModelEntity> = ViewHolder(parent).apply {
     if (viewType == EVEN_ROW_VIEW_TYPE) {
-      itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.manufacturer_even_bg))
+      itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.carmodels_even_bg))
     } else {
-      itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.manufacturer_odd_bg))
+      itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.carmodels_odd_bg))
     }
   }
 

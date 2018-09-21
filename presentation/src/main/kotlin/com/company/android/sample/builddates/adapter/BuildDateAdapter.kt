@@ -41,10 +41,10 @@ class BuildDateAdapter(
       viewType: Int): BaseViewHolder<BuildDateEntity> = ViewHolder(parent).apply {
     if (viewType == EVEN_ROW_VIEW_TYPE) {
       itemView.setBackgroundColor(
-          ContextCompat.getColor(itemView.context, R.color.manufacturer_even_bg))
+          ContextCompat.getColor(itemView.context, R.color.builddates_even_bg))
     } else {
       itemView.setBackgroundColor(
-          ContextCompat.getColor(itemView.context, R.color.manufacturer_odd_bg))
+          ContextCompat.getColor(itemView.context, R.color.builddates_odd_bg))
     }
   }
 

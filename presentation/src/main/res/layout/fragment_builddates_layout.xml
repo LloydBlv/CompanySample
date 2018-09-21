@@ -7,16 +7,6 @@
     android:layout_height="match_parent">
 
 
-  <TextView
-      android:id="@+id/builddates_fragment_header_tv"
-      android:layout_width="match_parent"
-      android:layout_height="?actionBarSize"
-      android:textSize="22sp"
-      android:padding="8dp"
-      android:textColor="#fff"
-      android:gravity="center_vertical"
-      />
-
   <android.support.v7.widget.RecyclerView
       android:id="@+id/builddates_fragment_recyclerview"
       android:paddingTop="?actionBarSize"
@@ -24,6 +14,22 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       />
+
+
+
+  <TextView
+      android:id="@+id/builddates_fragment_header_tv"
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      android:background="@color/carmodels_even_bg"
+      android:textSize="22sp"
+      android:padding="8dp"
+      android:textColor="#fff"
+      android:gravity="center_vertical"
+      />
+
+
+
   <ProgressBar
       android:id="@+id/builddates_fragment_pb"
       android:layout_width="wrap_content"

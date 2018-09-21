@@ -118,12 +118,14 @@ class ManufacturersFragment : BaseFragment() {
       adapter = ManufacturerAdapter(spanCount) { view, _ ->
         getItem<ManufacturerEntity>(view)?.let {
 
-          val manufacturerNameTv = view.findViewById<View>(R.id.manufacturer_item_name_tv)
-          val transitionName = ViewCompat.getTransitionName(manufacturerNameTv)
+//          val manufacturerNameTv = view.findViewById<View>(R.id.manufacturer_item_name_tv)
+          val transitionName = ViewCompat.getTransitionName(view)
+//          val transitionName = ViewCompat.getTransitionName(manufacturerNameTv)
 
           fragmentManager
               ?.beginTransaction()
-              ?.addSharedElement(manufacturerNameTv, transitionName)
+              ?.addSharedElement(view, transitionName)
+//              ?.addSharedElement(manufacturerNameTv, transitionName)
               ?.addToBackStack(CarModelsFragment.TAG)
               ?.replace(R.id.container, CarModelsFragment.newInstance(it.id, it.manufacturer))
               ?.commit()
