@@ -22,6 +22,7 @@ import com.company.android.sample.commons.toVisible
 import com.company.android.sample.config.AppConfig
 import ir.zinutech.android.domain.entities.BuildDateEntity
 import ir.zinutech.android.domain.usecases.GetBuildDates
+import jp.wasabeef.recyclerview.animators.FadeInUpAnimator
 import kotlinx.android.synthetic.main.fragment_builddates_layout.builddates_fragment_header_tv
 import kotlinx.android.synthetic.main.fragment_builddates_layout.builddates_fragment_pb
 import kotlinx.android.synthetic.main.fragment_builddates_layout.builddates_fragment_recyclerview
@@ -127,6 +128,7 @@ class BuildDatesFragment : BaseFragment() {
       setHasFixedSize(true)
       val linearLayoutManager = LinearLayoutManager(context)
       layoutManager = linearLayoutManager
+      itemAnimator = FadeInUpAnimator()
       adapter = BuildDateAdapter { view, _ ->
         getItem<BuildDateEntity>(view)?.let {}
       }

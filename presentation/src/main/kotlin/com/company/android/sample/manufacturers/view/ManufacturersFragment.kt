@@ -24,6 +24,8 @@ import com.company.android.sample.manufacturers.presenter.ManufacturersViewModel
 import com.company.android.sample.utils.EndlessRecyclerViewScrollListener
 import com.company.android.sample.widgets.GridItemDividerDecoration
 import ir.zinutech.android.domain.entities.ManufacturerEntity
+import jp.wasabeef.recyclerview.animators.FadeInUpAnimator
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.android.synthetic.main.fragment_manufacturers_layout.manufacturer_fragment_pb
 import kotlinx.android.synthetic.main.fragment_manufacturers_layout.manufacturers_fragment_recyclerview
 import timber.log.Timber
@@ -108,7 +110,7 @@ class ManufacturersFragment : BaseFragment() {
       addItemDecoration(GridItemDividerDecoration(context, R.dimen.divider_height,
           R.color.divider))
       layoutManager = linearLayoutManager
-//      itemAnimator = SlideInUpAnimator()
+      itemAnimator = FadeInUpAnimator()
       addOnScrollListener(object : EndlessRecyclerViewScrollListener(linearLayoutManager) {
         override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
           Timber.d("onLoadMore(), page:[%s], totalItemsCount:[%s]", page, totalItemsCount)

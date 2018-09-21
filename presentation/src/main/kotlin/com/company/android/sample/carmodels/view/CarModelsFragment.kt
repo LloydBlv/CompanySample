@@ -28,6 +28,8 @@ import com.company.android.sample.utils.EndlessRecyclerViewScrollListener
 import com.company.android.sample.widgets.GridItemDividerDecoration
 import ir.zinutech.android.domain.entities.ModelEntity
 import ir.zinutech.android.domain.usecases.GetModels
+import jp.wasabeef.recyclerview.animators.FadeInUpAnimator
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.android.synthetic.main.fragment_carmodels_layout.carmodels_fragment_header_tv
 import kotlinx.android.synthetic.main.fragment_carmodels_layout.carmodels_fragment_pb
 import kotlinx.android.synthetic.main.fragment_carmodels_layout.carmodels_fragment_recyclerview
@@ -134,7 +136,7 @@ class CarModelsFragment : BaseFragment() {
       addItemDecoration(GridItemDividerDecoration(context, R.dimen.divider_height,
           R.color.divider))
       layoutManager = linearLayoutManager
-//      itemAnimator = SlideInUpAnimator()
+      itemAnimator = FadeInUpAnimator()
       addOnScrollListener(object : EndlessRecyclerViewScrollListener(linearLayoutManager) {
         override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
           Timber.d("onLoadMore(), page:[%s], totalItemsCount:[%s]", page, totalItemsCount)
