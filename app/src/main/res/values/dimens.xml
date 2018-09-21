@@ -2,4 +2,12 @@
 <resources>
   <dimen name="spacing_large">32dp</dimen>
   <dimen name="spacing_huge">64dp</dimen>
+  <dimen name="z_card">2dp</dimen>
+  <dimen name="touch_raise">6dp</dimen>
+  <dimen name="padding_normal">16dp</dimen>
+  <integer name="num_columns">2</integer>
+  <dimen name="divider_height">1px</dimen>
+  <dimen name="keyline_1">72dp</dimen>
+  <dimen name="display_4_text_size">112sp</dimen>
+
 </resources>

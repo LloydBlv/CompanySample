@@ -15,7 +15,7 @@
  *
  */
 
-package io.plaidapp.core.ui.widget;
+package com.company.android.sample.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,8 +24,7 @@ import android.support.annotation.FontRes;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-
-import io.plaidapp.core.R;
+import com.company.android.sample.R;
 
 /**
  * An extension to {@link AppCompatTextView} which aligns text to a 4dp baseline grid.

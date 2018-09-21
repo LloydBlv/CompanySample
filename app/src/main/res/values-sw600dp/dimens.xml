@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <dimen name="touch_raise">9dp</dimen>
+  <dimen name="padding_normal">24dp</dimen>
+
 </resources>

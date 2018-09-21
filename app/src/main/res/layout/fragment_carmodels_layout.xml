@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/manufacturers_fragment_parent"
+    android:id="@+id/carmodels_fragment_parent"
     android:background="@color/background_super_dark"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
   <android.support.v4.widget.SwipeRefreshLayout
-      android:id="@+id/manufacturers_fragment_swipe_refresh"
+      android:id="@+id/carmodels_fragment_swipe_refresh"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/manufacturers_fragment_recyclerview"
+        android:id="@+id/carmodels_fragment_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

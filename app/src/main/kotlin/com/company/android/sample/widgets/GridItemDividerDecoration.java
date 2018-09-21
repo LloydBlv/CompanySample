@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.plaidapp.ui.recyclerview;
+package com.company.android.sample.widgets;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -27,8 +27,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import io.plaidapp.core.ui.recyclerview.Divided;
 
 /**
  * A {@link RecyclerView.ItemDecoration} which draws dividers (along the right & bottom)

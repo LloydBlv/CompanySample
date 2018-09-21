@@ -19,7 +19,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/manufacturer_item_parent"
+    android:id="@+id/models_item_parent"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:background="@color/manufacturer_even_bg"
@@ -28,7 +28,7 @@
     >
 
   <com.company.android.sample.widgets.BaselineGridTextView
-      android:id="@+id/manufacturer_item_name_tv"
+      android:id="@+id/models_item_name_tv"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_marginStart="@dimen/padding_normal"
@@ -40,23 +40,3 @@
       app:maxLinesByHeight="true"
       tools:text="Amazing designer news story" />
 </com.company.android.sample.widgets.FourThreeLinearLayout>
-
-    <!--
-    <?xml version="1.0" encoding="utf-8"?>
-    <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:foreground="?selectableItemBackground"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-      <TextView
-          android:id="@+id/manufacturer_item_name_tv"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          style="@style/TextAppearance.AppCompat.Subhead"
-          android:padding="16dp"
-          tools:text="ManufacturerName"
-          />
-    </FrameLayout>-->

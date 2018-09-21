@@ -15,9 +15,10 @@
  *
  */
 
-package io.plaidapp.core.ui.widget;
+package com.company.android.sample.widgets;
 
 import android.content.Context;
+import android.support.design.internal.ForegroundLinearLayout;
 import android.util.AttributeSet;
 
 import static android.view.View.MeasureSpec.EXACTLY;

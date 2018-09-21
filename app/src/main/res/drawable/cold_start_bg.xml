@@ -3,12 +3,12 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
 
-    <item android:drawable="@color/white"/>
+    <item android:drawable="@color/primary"/>
     <item>
         <bitmap
             android:gravity="center"
             android:tileMode="disabled"
-            android:src="@drawable/ic_filimo_coldstart"/>
+            android:src="@mipmap/ic_launcher"/>
     </item>
 
 </layer-list>

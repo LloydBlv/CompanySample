@@ -1,17 +1,9 @@
 package com.company.android.sample.commons
 
 import android.support.annotation.LayoutRes
-import android.util.SparseBooleanArray
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import com.company.android.sample.R
-import com.company.android.sample.models.entities.BaseViewHolder
 import java.util.ArrayList
-import android.os.Build.VERSION_CODES.O
-import android.support.v7.widget.RecyclerView
-import android.os.Build.VERSION_CODES.O
-import timber.log.Timber
 
 
 /**

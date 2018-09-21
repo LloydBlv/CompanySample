@@ -4,6 +4,10 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -11,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.company.android.sample.R
+import com.company.android.sample.carmodels.view.CarModelsFragment
 import com.company.android.sample.commons.BaseFragment
 import com.company.android.sample.commons.getItem
 import com.company.android.sample.config.AppConfig
@@ -18,7 +23,10 @@ import com.company.android.sample.manufacturers.adapter.ManufacturerAdapter
 import com.company.android.sample.manufacturers.domain.ManufacturersVMFactory
 import com.company.android.sample.manufacturers.presenter.ManufacturersViewModel
 import com.company.android.sample.utils.EndlessRecyclerViewScrollListener
+import com.company.android.sample.widgets.GridItemDividerDecoration
 import ir.zinutech.android.domain.entities.ManufacturerEntity
+import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.android.synthetic.main.fragment_manufacturers_layout.manufacturers_fragment_recyclerview
 import kotlinx.android.synthetic.main.fragment_manufacturers_layout.manufacturers_fragment_swipe_refresh
 import timber.log.Timber
@@ -61,9 +69,18 @@ class ManufacturersFragment : BaseFragment() {
     viewModel.viewState.observe(this, Observer { viewState ->
       if (viewState != null) {
         manufacturers_fragment_swipe_refresh.isRefreshing = viewState.isLoading
-        viewState.manufacturers?.let {
-          (manufacturers_fragment_recyclerview.adapter as ManufacturerAdapter).addAll(it)
+        (manufacturers_fragment_recyclerview.adapter as ManufacturerAdapter).apply {
+          if (itemCount == 0) {
+            if (viewState.manufacturers?.isNotEmpty() == true) {
+              addAll(viewState.manufacturers!!)
+            }
+          } else {
+            viewState.pageManufacturers?.let {
+              (manufacturers_fragment_recyclerview.adapter as ManufacturerAdapter).addAll(it)
+            }
+          }
         }
+
       }
     })
 
@@ -83,18 +100,27 @@ class ManufacturersFragment : BaseFragment() {
 
     manufacturers_fragment_recyclerview.apply {
       setHasFixedSize(true)
-      val linearLayoutManager = LinearLayoutManager(context)
+      val spanCount = resources.getInteger(R.integer.num_columns)
+      val linearLayoutManager = GridLayoutManager(context, spanCount)
+      addItemDecoration(GridItemDividerDecoration(context, R.dimen.divider_height,
+          R.color.divider))
       layoutManager = linearLayoutManager
+//      itemAnimator = SlideInUpAnimator()
       addOnScrollListener(object: EndlessRecyclerViewScrollListener(linearLayoutManager){
         override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
           Timber.d("onLoadMore(), page:[%s], totalItemsCount:[%s]", page, totalItemsCount)
           manufacturers_fragment_swipe_refresh.isRefreshing = true
-          viewModel.getNextManufacturers(page)
+          viewModel.getNextManufacturers()
         }
       })
-      adapter = ManufacturerAdapter { view, _ ->
+      adapter = ManufacturerAdapter(spanCount) { view, _ ->
         getItem<ManufacturerEntity>(view)?.let {
-          Timber.d("clickedItem:[%s]", it)
+          fragmentManager
+              ?.beginTransaction()
+              ?.add(R.id.container, CarModelsFragment.newInstance(it.id), CarModelsFragment.TAG)
+              ?.addToBackStack(null)
+              ?.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+              ?.commit()
         }
       }
     }

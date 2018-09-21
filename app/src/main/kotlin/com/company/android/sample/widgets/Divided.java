@@ -15,7 +15,7 @@
  *
  */
 
-package io.plaidapp.core.ui.recyclerview;
+package com.company.android.sample.widgets;
 
 /**
  * A marker interface used by {@link android.support.v7.widget.RecyclerView.ItemDecoration}s to

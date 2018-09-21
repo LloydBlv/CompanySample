@@ -1,4 +1,4 @@
-package com.company.android.sample.manufacturers.adapter
+package com.company.android.sample.carmodels.adapter
 
 import android.animation.AnimatorInflater
 import android.support.v4.content.ContextCompat
@@ -12,12 +12,12 @@ import com.company.android.sample.commons.isL
 import com.company.android.sample.commons.isM
 import com.company.android.sample.commons.BaseViewHolder
 import com.company.android.sample.widgets.Divided
-import ir.zinutech.android.domain.entities.ManufacturerEntity
-import kotlinx.android.synthetic.main.item_manufacturer_layout.view.manufacturer_item_name_tv
-import kotlinx.android.synthetic.main.item_manufacturer_layout.view.manufacturer_item_parent
+import ir.zinutech.android.domain.entities.ModelEntity
+import kotlinx.android.synthetic.main.item_model_layout.view.models_item_name_tv
+import kotlinx.android.synthetic.main.item_model_layout.view.models_item_parent
 
-class ManufacturerAdapter(private val spanCount: Int,
-    onListItemClickListener: RecyclerViewClickListener) : BaseLceAdapter<BaseViewHolder<ManufacturerEntity>, ManufacturerEntity>(
+class CarModelsAdapter(private val spanCount: Int,
+    onListItemClickListener: RecyclerViewClickListener) : BaseLceAdapter<BaseViewHolder<ModelEntity>, ModelEntity>(
     onListItemClickListener) {
 
   companion object {
@@ -26,7 +26,7 @@ class ManufacturerAdapter(private val spanCount: Int,
   }
 
 
-  override fun getLayout(viewType: Int): Int = R.layout.item_manufacturer_layout
+  override fun getLayout(viewType: Int): Int = R.layout.item_model_layout
 
 
   override fun getItemViewType(position: Int): Int {
@@ -38,7 +38,7 @@ class ManufacturerAdapter(private val spanCount: Int,
   }
 
   override fun getViewHolder(parent: View,
-      viewType: Int): BaseViewHolder<ManufacturerEntity> = ViewHolder(parent).apply {
+      viewType: Int): BaseViewHolder<ModelEntity> = ViewHolder(parent).apply {
     if (viewType == EVEN_ROW_VIEW_TYPE) {
       itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.manufacturer_even_bg))
     } else {
@@ -47,23 +47,23 @@ class ManufacturerAdapter(private val spanCount: Int,
   }
 
 
-  class ViewHolder(view: View) : BaseViewHolder<ManufacturerEntity>(view), Divided {
+  class ViewHolder(view: View) : BaseViewHolder<ModelEntity>(view), Divided {
     init {
       if (isL()) {
-        itemView.manufacturer_item_parent.apply {
+        itemView.models_item_parent.apply {
           stateListAnimator = AnimatorInflater.loadStateListAnimator(context, R.animator.raise)
           ViewCompat.setElevation(this, resources.getDimension(R.dimen.z_card))
         }
       }
 
       if (isM()) {
-        itemView.manufacturer_item_name_tv.breakStrategy = Layout.BREAK_STRATEGY_SIMPLE
+        itemView.models_item_name_tv.breakStrategy = Layout.BREAK_STRATEGY_SIMPLE
       }
 
     }
 
-    override fun bind(item: ManufacturerEntity) {
-      itemView.manufacturer_item_name_tv.text = item.manufacturer
+    override fun bind(item: ModelEntity) {
+      itemView.models_item_name_tv.text = item.model
     }
   }
 }

@@ -5,8 +5,10 @@ import com.company.android.sample.commons.BaseViewModel
 import com.company.android.sample.commons.SingleLiveEvent
 import com.company.android.sample.commons.toMainThread
 import com.company.android.sample.manufacturers.domain.ManufacturersViewState
+import ir.zinutech.android.domain.entities.ManufacturerEntity
 import ir.zinutech.android.domain.usecases.GetManufacturers
 import timber.log.Timber
+import java.util.Collections.addAll
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 class ManufacturersViewModel(private val getManufacturersUseCase: GetManufacturers): BaseViewModel() {
@@ -21,8 +23,8 @@ class ManufacturersViewModel(private val getManufacturersUseCase: GetManufacture
     pageIndex.value = 0
   }
 
-  fun getNextManufacturers(nextPage: Int){
-    pageIndex.value = nextPage
+  fun getNextManufacturers(){
+    pageIndex.value = pageIndex.value!! + 1
     getManufacturers()
   }
   fun refreshManufacturers(){
@@ -35,7 +37,17 @@ class ManufacturersViewModel(private val getManufacturersUseCase: GetManufacture
         getManufacturersUseCase.get(pageIndex.value!!)
             .subscribe({ manufacturers ->
               viewState.value?.let {
-                val newState = this.viewState.value?.copy(isLoading = false, manufacturers = manufacturers)
+                val newState = this.viewState.value?.copy(isLoading = false, pageManufacturers = manufacturers)
+
+                val newTotalManufacturers = ArrayList<ManufacturerEntity>()
+                if (newState?.manufacturers?.isNotEmpty() == true) {
+                  newTotalManufacturers.addAll(newState.manufacturers!!)
+                }
+
+                if (newState?.pageManufacturers?.isNotEmpty() == true) {
+                  newTotalManufacturers.addAll(newState.pageManufacturers!!)
+                }
+                newState?.manufacturers = newTotalManufacturers
                 this.viewState.value = newState
                 this.errorState.value = null
               }
